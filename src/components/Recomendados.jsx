@@ -72,7 +72,7 @@ export default function Recomendados() {
             console.error(error);
           }
         }
-        setRecommendedMovies(recommendations.slice(0, 20)); // Limitar a quantidade de filmes recomendados para evitar problemas de desempenho
+        setRecommendedMovies(recommendations.slice(0, 20)); 
         setLoading(false);
       };
 
