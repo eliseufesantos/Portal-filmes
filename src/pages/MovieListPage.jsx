@@ -15,7 +15,7 @@ export default function MovieListPage() {
     async function fetchMovies() {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=81138a21908f748371f7d81c33883717&language=pt-BR&page=${page}`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR&page=${page}`
         );
         const newMovies = response.data.results.filter(filme => !movieIds.has(filme.id));
         setFilmes((prevFilmes) => [...prevFilmes, ...newMovies]);
@@ -36,7 +36,7 @@ export default function MovieListPage() {
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=81138a21908f748371f7d81c33883717&language=pt-BR`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR`
         );
         setFilmes(response.data.results);
       } catch (error) {
@@ -49,7 +49,7 @@ export default function MovieListPage() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=81138a21908f748371f7d81c33883717&language=pt-BR&query=${e.target.value}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR&query=${e.target.value}`
       );
       setFilmes(response.data.results);
     } catch (error) {

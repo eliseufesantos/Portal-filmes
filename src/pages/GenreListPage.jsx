@@ -10,7 +10,7 @@ export default function GenreListPage() {
     async function fetchGenres() {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/genre/movie/list?api_key=81138a21908f748371f7d81c33883717&language=pt-BR`
+          `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR`
         );
         setGenres(response.data.genres);
       } catch (error) {
