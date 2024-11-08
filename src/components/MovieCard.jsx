@@ -10,7 +10,7 @@ import StarIcon from '@mui/icons-material/Star';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import { CircularProgress } from "@mui/material";
 
-export default function MovieCard({ id, title, poster_path, release_date, vote_average, onUpdate }) {
+export default function MovieCard({ id, title, poster_path, release_date, first_air_date, vote_average, onUpdate }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [isWatched, setIsWatched] = useState(false);
   const [isWatchLater, setIsWatchLater] = useState(false);
@@ -86,6 +86,8 @@ export default function MovieCard({ id, title, poster_path, release_date, vote_a
     if (onUpdate) onUpdate();
   };
 
+  const releaseDate = release_date || first_air_date;
+
   return (
     <div className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg w-64">
       {!imageLoaded && (
@@ -102,10 +104,10 @@ export default function MovieCard({ id, title, poster_path, release_date, vote_a
       <div className="p-4">
         <h2 className="text-lg font-bold mb-2">{title}</h2>
         <p className="text-gray-400 mb-2 flex items-center">
-          <CalendarTodayIcon className="mr-1" /> {release_date}
+          <CalendarTodayIcon className="mr-1" /> {releaseDate}
         </p>
         <p className="text-gray-400 mb-4 flex items-center">
-          <StarIcon className="mr-1" /> {vote_average}
+          <StarIcon className="mr-1" /> {vote_average.toFixed(1)}
         </p>
         <Link
           to={`/filmes/${id}`}

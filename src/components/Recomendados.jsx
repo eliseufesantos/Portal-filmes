@@ -60,7 +60,7 @@ export default function Recomendados() {
         for (const movie of allMovies) {
           try {
             const response = await axios.get(
-              `https://api.themoviedb.org/3/movie/${movie.id}/recommendations?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR`
+              `https://api.themoviedb.org/3/movie/${movie.id}/recommendations?api_key=81138a21908f748371f7d81c33883717&language=pt-BR`
             );
             response.data.results.forEach((recMovie) => {
               if (!movieIds.has(recMovie.id)) {
@@ -69,10 +69,11 @@ export default function Recomendados() {
               }
             });
           } catch (error) {
-            console.error(error);
+            console.error("Erro ao buscar recomendações:", error);
           }
         }
-        setRecommendedMovies(recommendations.slice(0, 20));
+        console.log("Recomendações obtidas:", recommendations);
+        setRecommendedMovies(recommendations.slice(0, 20)); // Limitar a quantidade de filmes recomendados para evitar problemas de desempenho
         setLoading(false);
       };
 
@@ -98,7 +99,7 @@ export default function Recomendados() {
           ))}
         </Slider>
       ) : (
-        <p className="text-red-500 text-xl text-left">Não há nada para sugerir no momento. Coloque filmes nos favoritos, assistidos ou para ver depois, e recarregue a página para surgir recomendações.</p>
+        <p className="text-red-500 text-xl text-left">Não há nada para sugerir no momento. Coloque filmes nos favoritos, assistidos ou para ver depois, e atualize a página para surgir recomendações.</p>
       )}
     </section>
   );

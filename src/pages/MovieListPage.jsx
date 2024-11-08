@@ -15,7 +15,7 @@ export default function MovieListPage() {
     async function fetchMovies() {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR&page=${page}`
+          `https://api.themoviedb.org/3/movie/popular?api_key=81138a21908f748371f7d81c33883717&language=pt-BR&page=${page}`
         );
         const newMovies = response.data.results.filter(filme => !movieIds.has(filme.id));
         setFilmes((prevFilmes) => [...prevFilmes, ...newMovies]);
@@ -33,11 +33,10 @@ export default function MovieListPage() {
   const handleSearch = async (e) => {
     setSearch(e.target.value);
     if (e.target.value.trim() === "") {
-      // Se o campo de busca estiver vazio, buscar filmes populares novamente
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR`
+          `https://api.themoviedb.org/3/movie/popular?api_key=81138a21908f748371f7d81c33883717&language=pt-BR`
         );
         setFilmes(response.data.results);
       } catch (error) {
@@ -50,7 +49,7 @@ export default function MovieListPage() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR&query=${e.target.value}`
+        `https://api.themoviedb.org/3/search/movie?api_key=81138a21908f748371f7d81c33883717&language=pt-BR&query=${e.target.value}`
       );
       setFilmes(response.data.results);
     } catch (error) {

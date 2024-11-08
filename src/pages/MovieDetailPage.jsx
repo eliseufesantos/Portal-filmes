@@ -14,17 +14,17 @@ export default function MovieDetailPage() {
   useEffect(() => {
     async function fetchMovie() {
       const movieResponse = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=81138a21908f748371f7d81c33883717&language=pt-BR`
       );
       setMovie(movieResponse.data);
 
       const castResponse = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR`
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=81138a21908f748371f7d81c33883717&language=pt-BR`
       );
       setCast(castResponse.data.cast);
 
       const trailerResponse = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=7c572a9f5b3ba776080330d23bb76e1e&language=pt-BR`
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=81138a21908f748371f7d81c33883717&language=pt-BR`
       );
       const officialTrailer = trailerResponse.data.results.find(
         (video) => video.type === "Trailer" && video.official
