@@ -72,8 +72,7 @@ export default function Recomendados() {
             console.error("Erro ao buscar recomendações:", error);
           }
         }
-        console.log("Recomendações obtidas:", recommendations);
-        setRecommendedMovies(recommendations.slice(0, 20)); // Limitar a quantidade de filmes recomendados para evitar problemas de desempenho
+        setRecommendedMovies(recommendations.slice(0, 20)); 
         setLoading(false);
       };
 
