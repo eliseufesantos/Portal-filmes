@@ -1,8 +1,8 @@
-# Portal de Filmes
+# 🎬 Portal de Filmes
 
 Este é um portal de filmes desenvolvido em React, que permite aos usuários explorar filmes populares, próximos lançamentos, séries de TV populares, e filmes por gênero. Os usuários também podem adicionar filmes aos favoritos, assistidos e para ver depois.
 
-## Funcionalidades
+## 🌟 Funcionalidades
 
 - **Página Inicial**: Exibe filmes populares, próximos lançamentos e séries de TV populares.
 - **Lista de Filmes**: Permite buscar e explorar filmes populares.
@@ -13,7 +13,7 @@ Este é um portal de filmes desenvolvido em React, que permite aos usuários exp
 - **Ver Depois**: Permite adicionar filmes à lista de ver depois.
 - **Recomendações**: Exibe recomendações de filmes baseadas nos filmes favoritos, assistidos e para ver depois.
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - **React**: Biblioteca JavaScript para construção de interfaces de usuário.
 - **React Router**: Biblioteca para gerenciamento de rotas no React.
@@ -21,10 +21,10 @@ Este é um portal de filmes desenvolvido em React, que permite aos usuários exp
 - **Tailwind CSS**: Framework CSS para estilização.
 - **Slick Carousel**: Biblioteca para criação de carrosséis.
 
-
-## Instruções de Acesso
-1. Visite https://portal-filmes-eight.vercel.app/ para acessar o site hospedado no Vercel.
+## 🌐 Instruções de Acesso
+1. Visite [Portal de Filmes](https://portal-filmes-eight.vercel.app/) para acessar o site hospedado no Vercel.
 2. Navegue pelas diferentes páginas usando os links no cabeçalho do site.
+
    
-## Desenvolvedores :alien:
+## :alien: Desenvolvedores 
 - **Eliseu Fernando Mendes dos Santos - rm98493**
