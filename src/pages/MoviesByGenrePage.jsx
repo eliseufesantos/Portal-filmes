@@ -17,7 +17,7 @@ export default function MoviesByGenrePage() {
     async function fetchMovies() {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&with_genres=${id}&language=pt-BR&page=${page}`
+          `https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_TMDB_API_KEY}&with_genres=${id}&language=pt-BR&page=${page}`
         );
         const newMovies = response.data.results.filter(movie => !movieIds.has(movie.id));
         setMovies((prevMovies) => [...prevMovies, ...newMovies]);
@@ -32,7 +32,7 @@ export default function MoviesByGenrePage() {
     async function fetchGenreName() {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR`
+          `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=pt-BR`
         );
         const genre = response.data.genres.find((genre) => genre.id === parseInt(id));
         setGenreName(genre ? genre.name : "Gênero Desconhecido");

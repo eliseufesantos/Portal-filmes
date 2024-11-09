@@ -60,7 +60,7 @@ export default function Recomendados() {
         for (const movie of allMovies) {
           try {
             const response = await axios.get(
-              `https://api.themoviedb.org/3/movie/${movie.id}/recommendations?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR`
+              `https://api.themoviedb.org/3/movie/${movie.id}/recommendations?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=pt-BR`
             );
             response.data.results.forEach((recMovie) => {
               if (!movieIds.has(recMovie.id)) {

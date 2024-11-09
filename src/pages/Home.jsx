@@ -53,17 +53,17 @@ export default function Home() {
     async function fetchData() {
       try {
         const popularResponse = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR`
+          `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=pt-BR`
         );
         setPopularMovies(popularResponse.data.results);
 
         const upcomingResponse = await axios.get(
-          `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR`
+          `https://api.themoviedb.org/3/movie/upcoming?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=pt-BR`
         );
         setUpcomingMovies(upcomingResponse.data.results);
 
         const tvResponse = await axios.get(
-          `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=pt-BR`
+          `https://api.themoviedb.org/3/tv/popular?api_key=${import.meta.env.VITE_TMDB_API_KEY}&language=pt-BR`
         );
         setTvShows(tvResponse.data.results);
 
